@@ -63,8 +63,10 @@ jobs:
       env:
         PROJECT_ID: ${{ secrets.PROJECT_ID }}
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        COMPONENT: ${{ secrets.COMPONENT }}
         DOMAIN: ${{ secrets.DOMAIN }}
-      run: terraform plan -no-color -var=project_id=$PROJECT_ID -var=cloudflare_api_token=$CLOUDFLARE_API_TOKEN -var=domain=$DOMAIN -var=instance_name=$INSTANCE_NAME --lock=false
+        INSTANCE_NAME: ${{ secrets.INSTANCE_NAME }}
+      run: terraform plan -no-color -var=project_id=$PROJECT_ID -var=cloudflare_api_token=$CLOUDFLARE_API_TOKEN -var=domain=$DOMAIN -var=instance_name=$INSTANCE_NAME -var=component=$COMPONENT --lock=false
     
     # - name: Terraform Apply
     #   id: apply
