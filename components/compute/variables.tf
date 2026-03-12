@@ -21,6 +21,10 @@ variable "component" {
   default = "compute"
 }
 
+variable "instance_name" {
+  type = string
+}
+
 variable "cloudflare_api_token" {}
 
 variable "domain" {

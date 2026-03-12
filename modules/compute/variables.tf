@@ -20,3 +20,7 @@ variable "project_name" {
 variable "component" {
   default = "compute"
 }
+
+variable "instance_name" {
+  default = "instance"
+}

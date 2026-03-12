@@ -1,11 +1,11 @@
 resource "google_compute_network" "compute_network" {
-  name = "${var.project_name}-${var.component}-network"
+  name = "${var.project_name}-${var.instance_name}-network"
 
   auto_create_subnetworks = "false"
 }
 
 resource "google_compute_subnetwork" "compute_subnet" {
-  name                     = "${var.project_name}-${var.component}-subnet"
+  name                     = "${var.project_name}-${var.instance_name}-subnet"
   ip_cidr_range            = "10.0.0.0/16"
   network                  = google_compute_network.compute_network.id
   private_ip_google_access = true

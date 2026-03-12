@@ -1,5 +1,5 @@
 resource "google_compute_instance" "compute_instance" {
-  name         = var.component
+  name         = var.instance_name
   machine_type = "e2-medium"
   zone         = "${var.region}-${var.zone}"
 
@@ -40,7 +40,7 @@ resource "google_compute_instance" "compute_instance" {
 }
 
 resource "google_compute_resource_policy" "auto_start_and_stop" {
-  name   = "${var.project_name}-${var.component}-policy"
+  name   = "${var.project_name}-${var.instance_name}-policy"
   region = var.region
   instance_schedule_policy {
     vm_start_schedule {
