@@ -27,7 +27,7 @@
 | <a name="input_iam_roles_list"></a> [iam\_roles\_list](#input\_iam\_roles\_list) | List of IAM roles to be assigned to GKE service account | `list(string)` | <pre>[<br/>  "roles/container.nodeServiceAccount"<br/>]</pre> | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | n/a | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | n/a | `string` | `"eoc"` | no |
-| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"europe-west1"` | no |
+| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"europe-west2"` | no |
 | <a name="input_wi_iam_roles_list"></a> [wi\_iam\_roles\_list](#input\_wi\_iam\_roles\_list) | List of IAM roles to be assigned to Workload Identity service account | `list(string)` | <pre>[<br/>  "roles/clouddebugger.agent",<br/>  "roles/cloudprofiler.agent",<br/>  "roles/cloudtrace.agent",<br/>  "roles/monitoring.metricWriter"<br/>]</pre> | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | n/a | `string` | `"b"` | no |
 <!-- END_TF_DOCS -->
