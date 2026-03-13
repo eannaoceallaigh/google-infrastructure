@@ -7,3 +7,7 @@ data "google_storage_bucket" "bootstrap_storage_bucket" {
 }
 
 data "google_project" "project" {}
+
+data "github_repository" "github_repository" {
+  full_name = "${var.github_organisation}/${var.github_repository}"
+}

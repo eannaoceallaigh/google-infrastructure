@@ -47,3 +47,8 @@ resource "google_project_service" "secretmanager" {
   project = var.project_id
   service = "secretmanager.googleapis.com"
 }
+
+resource "google_project_service" "orgpolicy" {
+  project = var.project_id
+  service = "orgpolicy.googleapis.com"
+}
