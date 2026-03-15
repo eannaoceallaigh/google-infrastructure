@@ -14,10 +14,6 @@ terraform {
       source  = "hashicorp/google"
       version = "6.34.0"
     }
-    github = {
-      source  = "integrations/github"
-      version = "5.42.0"
-    }
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 5"
