@@ -9,7 +9,7 @@ on:
       - components/**
       - modules/**
   schedule:
-    - cron: 10 19 * * *
+    - cron: 10 18 * * *
 
 enable-email-notifications: true
 
