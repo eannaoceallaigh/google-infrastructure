@@ -13,7 +13,9 @@ resource "google_project_iam_member" "github_actions_roles" {
     "roles/iam.serviceAccountUser",
     "roles/secretmanager.secretVersionManager",
     "roles/secretmanager.secretAccessor",
-    "roles/secretmanager.viewer"
+    "roles/secretmanager.viewer",
+    "roles/logging.configWriter",
+    "monitoring.notificationChannelViewer"
   ])
 
   project = var.project_id
