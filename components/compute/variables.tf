@@ -5,7 +5,7 @@ variable "region" {
 
 variable "zone" {
   type    = string
-  default = "b"
+  default = "a"
 }
 
 variable "project_id" {
