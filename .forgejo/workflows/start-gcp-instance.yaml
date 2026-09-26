@@ -1,0 +1,28 @@
+name: Start GCP Instance
+
+on:
+  workflow_dispatch:
+
+enable-email-notifications: true
+
+jobs:
+  build:
+    runs-on: [ forgejo ]
+    container:
+      image: ghcr.io/eannaoceallaigh/ubuntu-2204-ansible
+
+    name: 'Start GCP Instance'
+
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Authenticate to Google Cloud via JSON
+      uses: https://github.com/google-github-actions/auth@v3
+      with:
+        credentials_json: ${{ secrets.GOOGLE_CREDS }}
+
+    - name: Start instance
+      id: start_instance
+      run: |
+        gcloud config set project ${{ secrets.PROJECT_ID }}
+        gcloud compute instances start ${{ secrets.INSTANCE_NAME }} --zone=europe-west2-b
