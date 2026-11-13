@@ -24,9 +24,9 @@ resource "google_compute_instance" "compute_instance" {
     access_config {}
   }
 
-  resource_policies = [
-    google_compute_resource_policy.auto_start_and_stop.id
-  ]
+  # resource_policies = [
+  #   google_compute_resource_policy.auto_start_and_stop.id
+  # ]
 
   scheduling {
     preemptible        = true
@@ -46,9 +46,9 @@ resource "google_compute_resource_policy" "auto_start_and_stop" {
     vm_start_schedule {
       schedule = "00 19 * * *"
     }
-    # vm_stop_schedule {
-    #   schedule = "00 03 * * *"
-    # }
+    vm_stop_schedule {
+      schedule = "00 03 * * *"
+    }
 
     time_zone = "Europe/Dublin"
   }
