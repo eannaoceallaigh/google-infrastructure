@@ -24,9 +24,9 @@ resource "google_compute_instance" "compute_instance" {
     access_config {}
   }
 
-  # resource_policies = [
-  #   google_compute_resource_policy.auto_start_and_stop.id
-  # ]
+  resource_policies = [
+    google_compute_resource_policy.auto_start_and_stop.id
+  ]
 
   scheduling {
     preemptible        = true
@@ -39,17 +39,17 @@ resource "google_compute_instance" "compute_instance" {
   }
 }
 
-# resource "google_compute_resource_policy" "auto_start_and_stop" {
-#   name   = "${var.project_name}-${var.instance_name}-policy"
-#   region = var.region
-#   instance_schedule_policy {
-#     vm_start_schedule {
-#       schedule = "00 19 * * *"
-#     }
-#     vm_stop_schedule {
-#       schedule = "00 03 * * *"
-#     }
+resource "google_compute_resource_policy" "auto_start_and_stop" {
+  name   = "${var.project_name}-${var.instance_name}-policy"
+  region = var.region
+  instance_schedule_policy {
+    vm_start_schedule {
+      schedule = "00 19 * * *"
+    }
+    # vm_stop_schedule {
+    #   schedule = "00 03 * * *"
+    # }
 
-#     time_zone = "Europe/Dublin"
-#   }
-# }
+    time_zone = "Europe/Dublin"
+  }
+}
