@@ -24,9 +24,9 @@ resource "google_compute_instance" "compute_instance" {
     access_config {}
   }
 
-  resource_policies = [
-    google_compute_resource_policy.auto_start_and_stop.id
-  ]
+  # resource_policies = [
+  #   google_compute_resource_policy.auto_start_and_stop.id
+  # ]
 
   scheduling {
     preemptible        = true
